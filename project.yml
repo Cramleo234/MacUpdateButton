@@ -23,7 +23,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.cramleo.UpdatePilot
         PRODUCT_NAME: UpdatePilot
         INFOPLIST_KEY_CFBundleDisplayName: UpdatePilot
-        INFOPLIST_KEY_NSHumanReadableCopyright: Copyright © 2026 Marc Erkens
+        INFOPLIST_KEY_NSHumanReadableCopyright: Copyright © 2026 Cramleo
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ENABLE_HARDENED_RUNTIME: YES
         CODE_SIGN_STYLE: Automatic

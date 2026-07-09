@@ -196,7 +196,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = UpdatePilot;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Marc Erkens";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Cramleo";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -315,7 +315,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = UpdatePilot;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Marc Erkens";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Cramleo";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

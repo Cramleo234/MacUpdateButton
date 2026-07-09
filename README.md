@@ -68,3 +68,7 @@ Das erzeugt:
 ## Version
 
 Aktuelle Version: `0.0.2`
+
+## Lizenz
+
+Dieses Projekt ist unter der [MIT-Lizenz](LICENSE) veröffentlicht.
