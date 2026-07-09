@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52465AB0688ADD8CD7F86398 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */; };
+		5CDBBC689A8BAC7F32354D37 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */; };
+		5EE8B03F589FDBA971759ED7 /* UpdateCommandBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */; };
+		CC9007783AC4B01C331C000E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAADC645FD172D97FD74F6D /* ContentView.swift */; };
+		DAE0304515E7B55F5FF544B3 /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */; };
+		F6073A4B26A92B62E6FBEF01 /* MacUpdateButtonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */; };
+		F8E3E6EB9CC3E794AF9A0DF1 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57980B0787753049DB9B34BB /* UpdaterViewModel.swift */; };
+		FEED5C4CD5C1804D2E1615FA /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilderTests.swift; sourceTree = "<group>"; };
+		3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacUpdateButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57980B0787753049DB9B34BB /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
+		59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacUpdateButtonApp.swift; sourceTree = "<group>"; };
+		6C4BC2FD20627416EE0B865B /* MacUpdateButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUpdateButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEAADC645FD172D97FD74F6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommandRunner.swift; sourceTree = "<group>"; };
+		E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		283E346754421A095EFBAADD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C4BC2FD20627416EE0B865B /* MacUpdateButton.app */,
+				3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B911F9C833E9B284FA904B8B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CEAADC645FD172D97FD74F6D /* ContentView.swift */,
+				59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */,
+				57980B0787753049DB9B34BB /* UpdaterViewModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D1CE34D694A08D1E1ADB946C = {
+			isa = PBXGroup;
+			children = (
+				B911F9C833E9B284FA904B8B /* App */,
+				FC54C919AA1A84656E49A7F3 /* Core */,
+				E20046621F2D71D8098133D9 /* Tests */,
+				283E346754421A095EFBAADD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E20046621F2D71D8098133D9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		FC54C919AA1A84656E49A7F3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */,
+				E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C521D153457B23E1E2C1377 /* MacUpdateButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7848CD00597F35D1D187A4E /* Build configuration list for PBXNativeTarget "MacUpdateButtonTests" */;
+			buildPhases = (
+				DC7C980F186FB2E769CD2E16 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacUpdateButtonTests;
+			packageProductDependencies = (
+			);
+			productName = MacUpdateButtonTests;
+			productReference = 3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		881294DDD7BD1966A88512DE /* MacUpdateButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31BAD96F40CA881105358CAD /* Build configuration list for PBXNativeTarget "MacUpdateButton" */;
+			buildPhases = (
+				62122B0A8E0E664B9B20CDDC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacUpdateButton;
+			packageProductDependencies = (
+			);
+			productName = MacUpdateButton;
+			productReference = 6C4BC2FD20627416EE0B865B /* MacUpdateButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		889FBCAE4954ABCDE7E45136 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					881294DDD7BD1966A88512DE = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 111A414C5084EC72A164BB65 /* Build configuration list for PBXProject "MacUpdateButton" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D1CE34D694A08D1E1ADB946C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 283E346754421A095EFBAADD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				881294DDD7BD1966A88512DE /* MacUpdateButton */,
+				2C521D153457B23E1E2C1377 /* MacUpdateButtonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62122B0A8E0E664B9B20CDDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC9007783AC4B01C331C000E /* ContentView.swift in Sources */,
+				F6073A4B26A92B62E6FBEF01 /* MacUpdateButtonApp.swift in Sources */,
+				FEED5C4CD5C1804D2E1615FA /* ShellCommandRunner.swift in Sources */,
+				52465AB0688ADD8CD7F86398 /* UpdateCommandBuilder.swift in Sources */,
+				F8E3E6EB9CC3E794AF9A0DF1 /* UpdaterViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7C980F186FB2E769CD2E16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE0304515E7B55F5FF544B3 /* ShellCommandRunner.swift in Sources */,
+				5CDBBC689A8BAC7F32354D37 /* UpdateCommandBuilder.swift in Sources */,
+				5EE8B03F589FDBA971759ED7 /* UpdateCommandBuilderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2AC2E3C2A52001C0288F74D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MacUpdateButton;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Marc Erkens";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButton;
+				PRODUCT_NAME = MacUpdateButton;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		420694EEAD6524A24E9EA70E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.0.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		8525CC83A8B6B1B8A429A052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButtonTests;
+				SDKROOT = macosx;
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+		859E5FF2CF4F6F352A177D43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButtonTests;
+				SDKROOT = macosx;
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		A66E1BF0BE8A96F19D55B09A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MacUpdateButton;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Marc Erkens";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButton;
+				PRODUCT_NAME = MacUpdateButton;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA4D1AE008574F0AC3F2420C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.0.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		111A414C5084EC72A164BB65 /* Build configuration list for PBXProject "MacUpdateButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				420694EEAD6524A24E9EA70E /* Debug */,
+				DA4D1AE008574F0AC3F2420C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		31BAD96F40CA881105358CAD /* Build configuration list for PBXNativeTarget "MacUpdateButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC2E3C2A52001C0288F74D4 /* Debug */,
+				A66E1BF0BE8A96F19D55B09A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C7848CD00597F35D1D187A4E /* Build configuration list for PBXNativeTarget "MacUpdateButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				859E5FF2CF4F6F352A177D43 /* Debug */,
+				8525CC83A8B6B1B8A429A052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 889FBCAE4954ABCDE7E45136 /* Project object */;
+}

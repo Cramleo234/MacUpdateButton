@@ -1,0 +1,48 @@
+name: MacUpdateButton
+options:
+  bundleIdPrefix: com.cramleo
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    MARKETING_VERSION: "0.0.1"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+targets:
+  MacUpdateButton:
+    type: application
+    platform: macOS
+    sources:
+      - App
+      - Core
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cramleo.MacUpdateButton
+        PRODUCT_NAME: MacUpdateButton
+        INFOPLIST_KEY_CFBundleDisplayName: MacUpdateButton
+        INFOPLIST_KEY_NSHumanReadableCopyright: Copyright © 2026 Marc Erkens
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+        GENERATE_INFOPLIST_FILE: YES
+  MacUpdateButtonTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+      - Core
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cramleo.MacUpdateButtonTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: ""
+        BUNDLE_LOADER: ""
+schemes:
+  MacUpdateButton:
+    build:
+      targets:
+        MacUpdateButton: all
+        MacUpdateButtonTests: [test]
+    test:
+      targets:
+        - MacUpdateButtonTests
