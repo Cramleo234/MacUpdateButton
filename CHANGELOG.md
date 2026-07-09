@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.6
+
+- Oberfläche aufgeräumt: ruhigeres Fensterlayout, klarere Karten und besser getrennte Auswahl- und Protokollbereiche.
+- Versionshinweise in App und Update-Kommando aktualisiert.
+
 ## 0.0.5
 
 - Neues App-Icon für UpdatePilot ergänzt.

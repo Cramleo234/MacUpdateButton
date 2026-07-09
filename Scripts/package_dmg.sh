@@ -2,12 +2,12 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="0.0.5"
+VERSION="0.0.6"
 SCHEME="UpdatePilot"
 PROJECT="UpdatePilot.xcodeproj"
 CONFIGURATION="Release"
-DERIVED_DATA="$ROOT/build/DerivedData"
-ARCHIVE_DIR="$ROOT/build/Products/$CONFIGURATION"
+BUILD_ROOT="${BUILD_ROOT:-/Volumes/Externe Festplatte/Xcode/Build/UpdatePilot}"
+DERIVED_DATA="${DERIVED_DATA:-/Volumes/Externe Festplatte/Xcode/DerivedData/UpdatePilot-package}"
 DIST_DIR="$ROOT/dist"
 APP_NAME="UpdatePilot.app"
 DMG_NAME="UpdatePilot-$VERSION.dmg"
@@ -38,7 +38,7 @@ fi
 /usr/bin/ditto "$APP_SOURCE" "$DIST_DIR/$APP_NAME"
 
 # Create a simple install folder with an Applications shortcut for the DMG.
-DMG_STAGING="$ROOT/build/dmg-staging"
+DMG_STAGING="$BUILD_ROOT/dmg-staging"
 rm -rf "$DMG_STAGING"
 mkdir -p "$DMG_STAGING"
 /usr/bin/ditto "$DIST_DIR/$APP_NAME" "$DMG_STAGING/$APP_NAME"

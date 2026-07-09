@@ -5,151 +5,201 @@ struct ContentView: View {
     @StateObject private var viewModel = UpdaterViewModel()
 
     var body: some View {
-        ZStack {
-            LinearGradient(
-                colors: [Color.cyan.opacity(0.22), Color.blue.opacity(0.20), Color.indigo.opacity(0.16)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+        VStack(spacing: 0) {
+            header
+            Divider()
 
-            VStack(alignment: .leading, spacing: 24) {
-                header
-                updateCard
-                logView
+            HStack(alignment: .top, spacing: 22) {
+                VStack(spacing: 16) {
+                    updateCard
+                    selectionCard
+                }
+                .frame(width: 360)
+
+                logCard
             }
-            .padding(28)
+            .padding(24)
         }
+        .frame(minWidth: 860, minHeight: 620)
+        .background(Color(nsColor: .windowBackgroundColor))
     }
 
     private var header: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 14) {
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
-                .frame(width: 64, height: 64)
-                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .shadow(radius: 10, y: 5)
+                .frame(width: 52, height: 52)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text("UpdatePilot")
-                    .font(.system(size: 34, weight: .bold, design: .rounded))
-                Text("Version 0.0.3 · Ein sicherer Knopf für deine macOS-Softwareupdates")
-                    .font(.headline)
+                    .font(.system(size: 30, weight: .semibold, design: .rounded))
+                Text("Version 0.0.6 · macOS-Updates in einem ruhigen Ablauf")
+                    .font(.callout)
                     .foregroundStyle(.secondary)
             }
+
+            Spacer()
+
+            if viewModel.isRunning {
+                ProgressView()
+                    .controlSize(.large)
+                    .help("Update-Lauf läuft")
+            }
         }
+        .padding(.horizontal, 24)
+        .padding(.vertical, 18)
     }
 
     private var updateCard: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            HStack(alignment: .center, spacing: 18) {
-                Button(action: viewModel.startUpdates) {
-                    Label(viewModel.isRunning ? "Updates laufen…" : "Updates starten", systemImage: viewModel.isRunning ? "arrow.triangle.2.circlepath" : "arrow.down.circle.fill")
-                        .font(.system(size: 22, weight: .semibold, design: .rounded))
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 18)
-                }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .disabled(!viewModel.canStartUpdates)
+        card {
+            VStack(alignment: .leading, spacing: 10) {
+                Label("Update-Lauf", systemImage: "arrow.down.circle")
+                    .font(.headline)
 
-                if viewModel.isRunning {
-                    ProgressView()
-                        .controlSize(.large)
-                }
+                Text(viewModel.statusText)
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
-            Text(viewModel.statusText)
-                .font(.callout)
-                .foregroundStyle(.secondary)
-
-            selectionPanel
+            Button(action: viewModel.startUpdates) {
+                Label(
+                    viewModel.isRunning ? "Updates laufen…" : "Updates starten",
+                    systemImage: viewModel.isRunning ? "arrow.triangle.2.circlepath" : "play.fill"
+                )
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .disabled(!viewModel.canStartUpdates)
 
             if viewModel.selectedSteps.isEmpty {
-                Label("Wähle mindestens einen Bereich aus, bevor du startest.", systemImage: "exclamationmark.triangle.fill")
+                Label("Wähle mindestens einen Bereich aus.", systemImage: "exclamationmark.triangle")
                     .font(.callout)
                     .foregroundStyle(.orange)
             } else {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Ausgewählte Schritte")
-                        .font(.headline)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Ausgewählt")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+
                     ForEach(viewModel.selectedSteps, id: \.self) { step in
-                        Label(step, systemImage: "checkmark.circle")
+                        Label(step, systemImage: "checkmark.circle.fill")
                             .font(.callout)
+                            .foregroundStyle(.secondary)
+                            .labelStyle(.titleAndIcon)
                     }
                 }
-                .foregroundStyle(.secondary)
             }
         }
-        .padding(22)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(.white.opacity(0.35), lineWidth: 1)
-        )
     }
 
-    private var selectionPanel: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Was soll aktualisiert werden?")
+    private var selectionCard: some View {
+        card {
+            Text("Bereiche")
                 .font(.headline)
 
-            Toggle(isOn: $viewModel.selection.includeHomebrew) {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Homebrew")
-                        .font(.body.weight(.medium))
-                    Text("brew update, brew upgrade und brew cleanup im Terminal")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .disabled(viewModel.isRunning)
+            toggleRow(
+                title: "Homebrew",
+                subtitle: "Aktualisieren, upgraden und anschließend aufräumen",
+                systemImage: "shippingbox",
+                isOn: $viewModel.selection.includeHomebrew
+            )
 
-            Toggle(isOn: $viewModel.selection.includeMas) {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Mac App Store")
-                        .font(.body.weight(.medium))
-                    Text("mas upgrade im Terminal, falls mas installiert ist")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .disabled(viewModel.isRunning)
+            Divider()
 
-            Toggle(isOn: $viewModel.selection.includeSystemUpdateCheck) {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("macOS-Systemupdates anzeigen")
-                        .font(.body.weight(.medium))
-                    Text("Nur prüfen/anzeigen – keine automatische Installation und kein Neustart")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .disabled(viewModel.isRunning)
+            toggleRow(
+                title: "Mac App Store",
+                subtitle: "Apps mit mas aktualisieren, wenn mas installiert ist",
+                systemImage: "app.badge",
+                isOn: $viewModel.selection.includeMas
+            )
+
+            Divider()
+
+            toggleRow(
+                title: "macOS-Systemupdates",
+                subtitle: "Nur verfügbare Updates anzeigen, ohne Installation oder Neustart",
+                systemImage: "macbook.and.arrow.down",
+                isOn: $viewModel.selection.includeSystemUpdateCheck
+            )
         }
-        .padding(16)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 
-    private var logView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Protokoll")
-                .font(.headline)
+    private var logCard: some View {
+        card {
+            HStack {
+                Label("Protokoll", systemImage: "terminal")
+                    .font(.headline)
+                Spacer()
+                if viewModel.isRunning {
+                    Text("läuft")
+                        .font(.caption.weight(.medium))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(.blue.opacity(0.12), in: Capsule())
+                        .foregroundStyle(.blue)
+                }
+            }
+
             ScrollViewReader { proxy in
                 ScrollView {
                     Text(viewModel.logText)
                         .font(.system(.body, design: .monospaced))
+                        .foregroundStyle(.primary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .textSelection(.enabled)
                         .id("log-bottom")
                         .padding(14)
                 }
+                .background(Color(nsColor: .textBackgroundColor), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(.quaternary, lineWidth: 1)
+                )
                 .onChange(of: viewModel.logText) { _, _ in
                     proxy.scrollTo("log-bottom", anchor: .bottom)
                 }
             }
-            .background(Color.black.opacity(0.08), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private func toggleRow(title: String, subtitle: String, systemImage: String, isOn: Binding<Bool>) -> some View {
+        Toggle(isOn: isOn) {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: systemImage)
+                    .font(.title3)
+                    .foregroundStyle(.secondary)
+                    .frame(width: 24)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(title)
+                        .font(.body.weight(.medium))
+                    Text(subtitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+        .toggleStyle(.switch)
+        .disabled(viewModel.isRunning)
+    }
+
+    private func card<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            content()
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(.quaternary, lineWidth: 1)
+        )
     }
 }
 
