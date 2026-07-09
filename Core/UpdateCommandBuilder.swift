@@ -1,22 +1,66 @@
 import Foundation
 
-public enum UpdateCommandBuilder {
-    public static let displaySteps: [String] = [
-        "Homebrew aktualisieren, falls installiert",
-        "Homebrew-Pakete upgraden und aufräumen",
-        "Mac-App-Store-Apps mit mas aktualisieren, falls installiert",
-        "macOS-Systemupdates anzeigen, ohne sie automatisch zu installieren"
-    ]
+public struct UpdateSelection: Equatable {
+    public var includeHomebrew: Bool
+    public var includeMas: Bool
+    public var includeSystemUpdateCheck: Bool
 
-    public static func updateCommand() -> String {
-        [
+    public init(includeHomebrew: Bool = true, includeMas: Bool = true, includeSystemUpdateCheck: Bool = true) {
+        self.includeHomebrew = includeHomebrew
+        self.includeMas = includeMas
+        self.includeSystemUpdateCheck = includeSystemUpdateCheck
+    }
+
+    public var hasAnySelection: Bool {
+        includeHomebrew || includeMas || includeSystemUpdateCheck
+    }
+}
+
+public enum UpdateCommandBuilder {
+    public static func displaySteps(for selection: UpdateSelection = UpdateSelection()) -> [String] {
+        var steps: [String] = []
+
+        if selection.includeHomebrew {
+            steps.append("Homebrew aktualisieren, upgraden und aufräumen")
+        }
+
+        if selection.includeMas {
+            steps.append("Mac-App-Store-Apps mit mas aktualisieren")
+        }
+
+        if selection.includeSystemUpdateCheck {
+            steps.append("macOS-Systemupdates anzeigen, ohne sie automatisch zu installieren")
+        }
+
+        return steps
+    }
+
+    public static func updateCommand(selection: UpdateSelection = UpdateSelection()) -> String {
+        var commands = [
             "set -o pipefail",
-            "echo '== MacUpdateButton 0.0.1 =='",
-            homebrewCommand(),
-            masCommand(),
-            systemUpdateCheckCommand(),
-            "echo '== Update-Lauf beendet =='"
-        ].joined(separator: "\n")
+            "echo '== UpdatePilot 0.0.2 =='"
+        ]
+
+        if selection.includeHomebrew {
+            commands.append(homebrewCommand())
+        } else {
+            commands.append("echo 'Homebrew wurde abgewählt – überspringe Homebrew-Updates.'")
+        }
+
+        if selection.includeMas {
+            commands.append(masCommand())
+        } else {
+            commands.append("echo 'Mac-App-Store-Updates wurden abgewählt – überspringe mas.'")
+        }
+
+        if selection.includeSystemUpdateCheck {
+            commands.append(systemUpdateCheckCommand())
+        } else {
+            commands.append("echo 'macOS-Systemupdate-Anzeige wurde abgewählt.'")
+        }
+
+        commands.append("echo '== Update-Lauf beendet =='")
+        return commands.joined(separator: "\n")
     }
 
     public static func homebrewCommand() -> String {
@@ -49,7 +93,7 @@ fi
         """
 echo '== macOS-Systemupdates: verfügbare Updates =='
 softwareupdate -l || true
-echo 'Hinweis: macOS-Systemupdates werden in Version 0.0.1 nur angezeigt, nicht automatisch installiert.'
+echo 'Hinweis: macOS-Systemupdates werden in Version 0.0.2 nur angezeigt, nicht automatisch installiert.'
 """
     }
 }

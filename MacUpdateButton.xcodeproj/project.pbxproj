@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52465AB0688ADD8CD7F86398 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */; };
+		552C162A96F8019B955F6BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C0A3375E1D33D8415D325 /* Assets.xcassets */; };
 		5CDBBC689A8BAC7F32354D37 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */; };
 		5EE8B03F589FDBA971759ED7 /* UpdateCommandBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */; };
 		CC9007783AC4B01C331C000E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAADC645FD172D97FD74F6D /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F9C0A3375E1D33D8415D325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilderTests.swift; sourceTree = "<group>"; };
 		3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacUpdateButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57980B0787753049DB9B34BB /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 		B911F9C833E9B284FA904B8B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2F9C0A3375E1D33D8415D325 /* Assets.xcassets */,
 				CEAADC645FD172D97FD74F6D /* ContentView.swift */,
 				59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */,
 				57980B0787753049DB9B34BB /* UpdaterViewModel.swift */,
@@ -100,6 +103,7 @@
 			buildConfigurationList = 31BAD96F40CA881105358CAD /* Build configuration list for PBXNativeTarget "MacUpdateButton" */;
 			buildPhases = (
 				62122B0A8E0E664B9B20CDDC /* Sources */,
+				636F9EF7C021E7D6DC941045 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +150,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		636F9EF7C021E7D6DC941045 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552C162A96F8019B955F6BA8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		62122B0A8E0E664B9B20CDDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -180,14 +195,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MacUpdateButton;
+				INFOPLIST_KEY_CFBundleDisplayName = UpdatePilot;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Marc Erkens";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButton;
-				PRODUCT_NAME = MacUpdateButton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.UpdatePilot;
+				PRODUCT_NAME = UpdatePilot;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -226,7 +241,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -245,7 +260,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -299,14 +314,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MacUpdateButton;
+				INFOPLIST_KEY_CFBundleDisplayName = UpdatePilot;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Marc Erkens";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButton;
-				PRODUCT_NAME = MacUpdateButton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.UpdatePilot;
+				PRODUCT_NAME = UpdatePilot;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -345,7 +360,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -358,7 +373,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

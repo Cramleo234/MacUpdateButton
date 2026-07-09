@@ -1,28 +1,31 @@
-# MacUpdateButton
+# MacUpdateButton / UpdatePilot
 
-MacUpdateButton ist eine kleine native macOS-App, mit der wir gemeinsam eine einfache „Ein-Knopf“-Aktualisierung für deine Software bauen.
+Dieses Repository enthält **UpdatePilot**, eine kleine native macOS-App, mit der wir gemeinsam eine einfache „Ein-Knopf“-Aktualisierung für deine Software bauen.
 
 ## Ziel
 
-Version `0.0.1` startet bewusst klein:
+Version `0.0.2` enthält:
 
-- native macOS-App mit SwiftUI
+- nativer macOS-Name **UpdatePilot**
+- eigenes App-Icon
 - ein großer Button: **Updates starten**
-- führt Homebrew-Updates aus, wenn Homebrew installiert ist
-- führt Mac-App-Store-Updates mit `mas` aus, wenn `mas` installiert ist
-- zeigt macOS-Systemupdates an, installiert sie aber in v0.0.1 noch nicht automatisch
-- protokolliert die Ausgabe sichtbar in der App
+- sichere Auswahl, was aktualisiert/geprüft werden soll:
+  - Homebrew
+  - Mac App Store via `mas`, falls installiert
+  - macOS-Systemupdates nur anzeigen
+- sichtbares Protokoll in der App
+- baubare `.app` und `.dmg`
 
-## Warum Systemupdates noch nicht automatisch?
+## Sicherheitsentscheidung
 
-`softwareupdate -i -a` kann Admin-Rechte, Neustarts und längere Sperren benötigen. Für die erste Version bleibt das bewusst sicher: anzeigen ja, automatisch installieren später nach gemeinsamer Entscheidung.
+`softwareupdate -i -a` kann Admin-Rechte, Neustarts und längere Sperren benötigen. Deshalb zeigt UpdatePilot macOS-Systemupdates aktuell nur an. Automatische Systemupdate-Installation bauen wir erst ein, wenn wir gemeinsam festlegen, wie Bestätigung, Neustart und Admin-Rechte sicher funktionieren sollen.
 
 ## Entwicklung
 
 Voraussetzungen:
 
 - macOS
-- Xcode oder Xcode Command Line Tools
+- Xcode
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen)
 
 Projekt generieren:
@@ -34,9 +37,21 @@ xcodegen generate
 Build/Test:
 
 ```bash
-xcodebuild test -project MacUpdateButton.xcodeproj -scheme MacUpdateButton -destination 'platform=macOS'
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
+xcodebuild test -project MacUpdateButton.xcodeproj -scheme MacUpdateButton -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO
 ```
+
+Release-App lokal bauen:
+
+```bash
+./Scripts/package_dmg.sh
+```
+
+Das erzeugt:
+
+- `dist/UpdatePilot.app`
+- `dist/UpdatePilot-0.0.2.dmg`
 
 ## Version
 
-Aktuelle Startversion: `0.0.1`
+Aktuelle Version: `0.0.2`
