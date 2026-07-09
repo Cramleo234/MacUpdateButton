@@ -24,14 +24,14 @@ final class UpdaterViewModel: ObservableObject {
         }
 
         isRunning = true
-        statusText = "Terminal wird geöffnet…"
-        logText = "Starte Update-Lauf im Terminal…\n"
+        statusText = "Update-Lauf läuft…"
+        logText = "Starte Update-Lauf…\n"
 
         Task {
             let command = UpdateCommandBuilder.updateCommand(selection: selection)
-            append("$ open -a Terminal '<UpdatePilot-Skript>'\n\n")
+            append("$ /bin/zsh -lc '<UpdatePilot-Kommandos>'\n\n")
             append(command)
-            append("\n\n--- Hinweis ---\n")
+            append("\n\n--- Ausgabe ---\n")
 
             let exitCode = await runner.run(command: command) { [weak self] output in
                 Task { @MainActor in
@@ -40,10 +40,10 @@ final class UpdaterViewModel: ObservableObject {
             }
 
             if exitCode == 0 {
-                statusText = "Update-Lauf läuft im Terminal."
-                append("\nDas Terminalfenster ist offen. Bitte dort weiterarbeiten, falls ein Passwort abgefragt wird.\n")
+                statusText = "Update-Lauf abgeschlossen."
+                append("\nUpdate-Lauf abgeschlossen.\n")
             } else {
-                statusText = "Terminal konnte nicht geöffnet werden."
+                statusText = "Update-Lauf mit Fehler beendet."
                 append("\nBeendet mit Exit-Code: \(exitCode)\n")
             }
 

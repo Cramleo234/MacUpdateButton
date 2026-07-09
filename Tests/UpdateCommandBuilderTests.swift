@@ -4,7 +4,7 @@ final class UpdateCommandBuilderTests: XCTestCase {
     func testUpdateCommandContainsSafeVersionAndDefaultTools() {
         let command = UpdateCommandBuilder.updateCommand()
 
-        XCTAssertTrue(command.contains("UpdatePilot 0.0.3"))
+        XCTAssertTrue(command.contains("UpdatePilot 0.0.4"))
         XCTAssertTrue(command.contains("brew update"))
         XCTAssertTrue(command.contains("brew upgrade"))
         XCTAssertTrue(command.contains("mas upgrade"))
@@ -43,11 +43,11 @@ final class UpdateCommandBuilderTests: XCTestCase {
         XCTAssertTrue(UpdateSelection(includeHomebrew: true, includeMas: false, includeSystemUpdateCheck: false).hasAnySelection)
     }
 
-    func testTerminalScriptExplainsPasswordPrompt() {
-        let script = TerminalScriptFactory.scriptBody(for: "echo test")
+    func testShellCommandRunsThroughZshWithoutOpeningTerminal() {
+        let arguments = ShellCommandFactory.arguments(for: "echo test")
 
-        XCTAssertTrue(script.contains("interaktiver Update-Lauf"))
-        XCTAssertTrue(script.contains("Passwort"))
-        XCTAssertTrue(script.contains("echo test"))
+        XCTAssertEqual(ShellCommandFactory.executablePath, "/bin/zsh")
+        XCTAssertEqual(arguments, ["-lc", "echo test"])
+        XCTAssertFalse(arguments.contains("Terminal"))
     }
 }

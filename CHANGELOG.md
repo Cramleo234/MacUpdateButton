@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.4
+
+- Update-Lauf startet wieder direkt in der App statt in einem separaten Terminalfenster.
+- Status- und Protokolltexte entsprechend angepasst.
+
 ## 0.0.3
 
 - Update-Lauf öffnet jetzt ein Terminalfenster, damit Passwortabfragen beantwortet werden können.

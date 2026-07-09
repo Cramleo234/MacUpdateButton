@@ -4,7 +4,7 @@ Dieses Repository enthält **UpdatePilot**, eine kleine native macOS-App, mit de
 
 ## Ziel
 
-Version `0.0.2` enthält:
+Version `0.0.4` enthält:
 
 - nativer macOS-Name **UpdatePilot**
 - eigenes App-Icon
@@ -13,7 +13,7 @@ Version `0.0.2` enthält:
   - Homebrew
   - Mac App Store via `mas`, falls installiert
   - macOS-Systemupdates nur anzeigen
-- sichtbares Protokoll in der App
+- sichtbares Protokoll in der App, ohne separates Terminalfenster
 - baubare `.app` und `.dmg`
 
 ## Sicherheitsentscheidung
@@ -63,11 +63,11 @@ Release-App lokal bauen:
 Das erzeugt:
 
 - `dist/UpdatePilot.app`
-- `dist/UpdatePilot-0.0.2.dmg`
+- `dist/UpdatePilot-0.0.4.dmg`
 
 ## Version
 
-Aktuelle Version: `0.0.2`
+Aktuelle Version: `0.0.4`
 
 ## Lizenz
 

@@ -4,55 +4,54 @@ public final class ShellCommandRunner {
     public init() {}
 
     public func run(command: String, onOutput: @escaping @Sendable (String) -> Void) async -> Int32 {
-        let fileManager = FileManager.default
-        let runDirectory = fileManager.temporaryDirectory
-            .appendingPathComponent("UpdatePilot")
-            .appendingPathComponent(UUID().uuidString, isDirectory: true)
-        let scriptURL = runDirectory.appendingPathComponent("run-updatepilot.sh")
+        await withCheckedContinuation { continuation in
+            let process = Process()
+            process.executableURL = URL(fileURLWithPath: ShellCommandFactory.executablePath)
+            process.arguments = ShellCommandFactory.arguments(for: command)
 
-        do {
-            try fileManager.createDirectory(at: runDirectory, withIntermediateDirectories: true)
-            try TerminalScriptFactory.scriptBody(for: command).write(to: scriptURL, atomically: true, encoding: .utf8)
-            try fileManager.setAttributes([.posixPermissions: 0o700], ofItemAtPath: scriptURL.path)
-        } catch {
-            onOutput("Konnte das Terminal-Skript nicht vorbereiten: \\(error.localizedDescription)\\n")
-            return 127
-        }
+            let outputPipe = Pipe()
+            let errorPipe = Pipe()
+            process.standardOutput = outputPipe
+            process.standardError = errorPipe
 
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-        process.arguments = ["-a", "Terminal", scriptURL.path]
-
-        do {
-            try process.run()
-            process.waitUntilExit()
-            if process.terminationStatus == 0 {
-                onOutput("Terminalfenster geöffnet. Passwortabfragen können dort beantwortet werden.\\n")
-            } else {
-                onOutput("Terminal konnte nicht geöffnet werden. Exit-Code: \\(process.terminationStatus)\\n")
+            let emitData: @Sendable (Data) -> Void = { data in
+                guard !data.isEmpty, let text = String(data: data, encoding: .utf8), !text.isEmpty else {
+                    return
+                }
+                onOutput(text)
             }
-            return process.terminationStatus
-        } catch {
-            onOutput("Konnte Terminal nicht öffnen: \\(error.localizedDescription)\\n")
-            return 127
+
+            outputPipe.fileHandleForReading.readabilityHandler = { handle in
+                emitData(handle.availableData)
+            }
+            errorPipe.fileHandleForReading.readabilityHandler = { handle in
+                emitData(handle.availableData)
+            }
+
+            process.terminationHandler = { finishedProcess in
+                outputPipe.fileHandleForReading.readabilityHandler = nil
+                errorPipe.fileHandleForReading.readabilityHandler = nil
+                emitData(outputPipe.fileHandleForReading.readDataToEndOfFile())
+                emitData(errorPipe.fileHandleForReading.readDataToEndOfFile())
+                continuation.resume(returning: finishedProcess.terminationStatus)
+            }
+
+            do {
+                try process.run()
+            } catch {
+                outputPipe.fileHandleForReading.readabilityHandler = nil
+                errorPipe.fileHandleForReading.readabilityHandler = nil
+                onOutput("Konnte Update-Lauf nicht starten: \(error.localizedDescription)\n")
+                continuation.resume(returning: 127)
+            }
         }
     }
 }
 
-public enum TerminalScriptFactory {
-    public static func scriptBody(for command: String) -> String {
-        """
-        #!/bin/zsh
-        clear
-        echo '== UpdatePilot: interaktiver Update-Lauf =='
-        echo 'Wenn macOS ein Passwort verlangt, kannst du es hier im Terminal eingeben.'
-        echo
-        \(command)
-        status=$?
-        echo
-        echo "UpdatePilot beendet mit Exit-Code: $status"
-        echo 'Dieses Terminalfenster kann geschlossen werden.'
-        exit $status
-        """
+public enum ShellCommandFactory {
+    public static let executablePath = "/bin/zsh"
+
+    public static func arguments(for command: String) -> [String] {
+        ["-lc", command]
     }
 }
