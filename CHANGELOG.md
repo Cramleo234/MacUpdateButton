@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0
+
+- Hauptfenster als neues Dashboard mit Statusbereich, Update-Plan und Ablaufanzeige aufgebaut.
+- Protokoll einklappbar gemacht, damit der normale Ablauf ruhiger bleibt.
+- Freundlichere Fehleranzeige und Wiederholen-Aktion ergänzt.
+- Neue Modelle und Tests für Update-Plan, Timeline und Fehlertexte ergänzt.
+
 ## 0.0.6
 
 - Oberfläche aufgeräumt: ruhigeres Fensterlayout, klarere Karten und besser getrennte Auswahl- und Protokollbereiche.

@@ -11,11 +11,14 @@
 		21F5AD0F969FB691F85EE4A3 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */; };
 		27051C86B353C1A93618BBAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DCE3F4868A2687F7C685BA /* Assets.xcassets */; };
 		29047BDC07EBD26A81F4E58B /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */; };
+		8306B14194A8C8090DD6CBF5 /* UpdateDashboardModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56B6385395807F7811702E3 /* UpdateDashboardModelTests.swift */; };
 		85AF6454CB1F65218EA34A02 /* UpdatePilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486FA8577A414933ACD4519 /* UpdatePilotApp.swift */; };
+		9208477E49C6C7138E058B48 /* UpdateDashboardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966061C1DCC850D43A663AB /* UpdateDashboardModels.swift */; };
 		BA87A02DC72E341D9C60CD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1823064699C91EF5DA8BF4 /* ContentView.swift */; };
 		D796B227BB96F2C3ADEDBDE6 /* UpdateCommandBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E745D3774B297814E78FAA /* UpdateCommandBuilderTests.swift */; };
 		DD60A1F8888212E2E0181100 /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */; };
 		F24D334AEA382E5D4A4C3415 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */; };
+		F27632C86F2DD66766580B10 /* UpdateDashboardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966061C1DCC850D43A663AB /* UpdateDashboardModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,8 @@
 		94E745D3774B297814E78FAA /* UpdateCommandBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilderTests.swift; sourceTree = "<group>"; };
 		9C1823064699C91EF5DA8BF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D0234F7257FB8F00DF17BBBF /* UpdatePilotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpdatePilotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56B6385395807F7811702E3 /* UpdateDashboardModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDashboardModelTests.swift; sourceTree = "<group>"; };
+		E966061C1DCC850D43A663AB /* UpdateDashboardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDashboardModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -35,6 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				94E745D3774B297814E78FAA /* UpdateCommandBuilderTests.swift */,
+				E56B6385395807F7811702E3 /* UpdateDashboardModelTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -74,6 +80,7 @@
 			children = (
 				5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */,
 				40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */,
+				E966061C1DCC850D43A663AB /* UpdateDashboardModels.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 				29047BDC07EBD26A81F4E58B /* ShellCommandRunner.swift in Sources */,
 				21F5AD0F969FB691F85EE4A3 /* UpdateCommandBuilder.swift in Sources */,
 				D796B227BB96F2C3ADEDBDE6 /* UpdateCommandBuilderTests.swift in Sources */,
+				8306B14194A8C8090DD6CBF5 /* UpdateDashboardModelTests.swift in Sources */,
+				F27632C86F2DD66766580B10 /* UpdateDashboardModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +188,7 @@
 				BA87A02DC72E341D9C60CD96 /* ContentView.swift in Sources */,
 				DD60A1F8888212E2E0181100 /* ShellCommandRunner.swift in Sources */,
 				F24D334AEA382E5D4A4C3415 /* UpdateCommandBuilder.swift in Sources */,
+				9208477E49C6C7138E058B48 /* UpdateDashboardModels.swift in Sources */,
 				85AF6454CB1F65218EA34A02 /* UpdatePilotApp.swift in Sources */,
 				0143E704D1EE9C7FA34F0C82 /* UpdaterViewModel.swift in Sources */,
 			);
@@ -275,7 +285,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -294,7 +304,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,7 +370,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -373,7 +383,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
