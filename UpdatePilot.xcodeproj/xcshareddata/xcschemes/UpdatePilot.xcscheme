@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "881294DDD7BD1966A88512DE"
-               BuildableName = "MacUpdateButton.app"
-               BlueprintName = "MacUpdateButton"
-               ReferencedContainer = "container:MacUpdateButton.xcodeproj">
+               BlueprintIdentifier = "F06CD10086874C5C310B0542"
+               BuildableName = "UpdatePilot.app"
+               BlueprintName = "UpdatePilot"
+               ReferencedContainer = "container:UpdatePilot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,10 +29,10 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C521D153457B23E1E2C1377"
-               BuildableName = "MacUpdateButtonTests.xctest"
-               BlueprintName = "MacUpdateButtonTests"
-               ReferencedContainer = "container:MacUpdateButton.xcodeproj">
+               BlueprintIdentifier = "2351CDE3262FD91EE49F59A7"
+               BuildableName = "UpdatePilotTests.xctest"
+               BlueprintName = "UpdatePilotTests"
+               ReferencedContainer = "container:UpdatePilot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,10 +46,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "881294DDD7BD1966A88512DE"
-            BuildableName = "MacUpdateButton.app"
-            BlueprintName = "MacUpdateButton"
-            ReferencedContainer = "container:MacUpdateButton.xcodeproj">
+            BlueprintIdentifier = "F06CD10086874C5C310B0542"
+            BuildableName = "UpdatePilot.app"
+            BlueprintName = "UpdatePilot"
+            ReferencedContainer = "container:UpdatePilot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -58,10 +58,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C521D153457B23E1E2C1377"
-               BuildableName = "MacUpdateButtonTests.xctest"
-               BlueprintName = "MacUpdateButtonTests"
-               ReferencedContainer = "container:MacUpdateButton.xcodeproj">
+               BlueprintIdentifier = "2351CDE3262FD91EE49F59A7"
+               BuildableName = "UpdatePilotTests.xctest"
+               BlueprintName = "UpdatePilotTests"
+               ReferencedContainer = "container:UpdatePilot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -82,10 +82,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "881294DDD7BD1966A88512DE"
-            BuildableName = "MacUpdateButton.app"
-            BlueprintName = "MacUpdateButton"
-            ReferencedContainer = "container:MacUpdateButton.xcodeproj">
+            BlueprintIdentifier = "F06CD10086874C5C310B0542"
+            BuildableName = "UpdatePilot.app"
+            BlueprintName = "UpdatePilot"
+            ReferencedContainer = "container:UpdatePilot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -99,10 +99,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "881294DDD7BD1966A88512DE"
-            BuildableName = "MacUpdateButton.app"
-            BlueprintName = "MacUpdateButton"
-            ReferencedContainer = "container:MacUpdateButton.xcodeproj">
+            BlueprintIdentifier = "F06CD10086874C5C310B0542"
+            BuildableName = "UpdatePilot.app"
+            BlueprintName = "UpdatePilot"
+            ReferencedContainer = "container:UpdatePilot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

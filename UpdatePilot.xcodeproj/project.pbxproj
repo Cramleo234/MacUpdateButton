@@ -7,73 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52465AB0688ADD8CD7F86398 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */; };
-		552C162A96F8019B955F6BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C0A3375E1D33D8415D325 /* Assets.xcassets */; };
-		5CDBBC689A8BAC7F32354D37 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */; };
-		5EE8B03F589FDBA971759ED7 /* UpdateCommandBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */; };
-		CC9007783AC4B01C331C000E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAADC645FD172D97FD74F6D /* ContentView.swift */; };
-		DAE0304515E7B55F5FF544B3 /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */; };
-		F6073A4B26A92B62E6FBEF01 /* MacUpdateButtonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */; };
-		F8E3E6EB9CC3E794AF9A0DF1 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57980B0787753049DB9B34BB /* UpdaterViewModel.swift */; };
-		FEED5C4CD5C1804D2E1615FA /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */; };
+		0143E704D1EE9C7FA34F0C82 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CDD86550396965900925A9 /* UpdaterViewModel.swift */; };
+		21F5AD0F969FB691F85EE4A3 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */; };
+		27051C86B353C1A93618BBAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DCE3F4868A2687F7C685BA /* Assets.xcassets */; };
+		29047BDC07EBD26A81F4E58B /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */; };
+		85AF6454CB1F65218EA34A02 /* UpdatePilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486FA8577A414933ACD4519 /* UpdatePilotApp.swift */; };
+		BA87A02DC72E341D9C60CD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1823064699C91EF5DA8BF4 /* ContentView.swift */; };
+		D796B227BB96F2C3ADEDBDE6 /* UpdateCommandBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E745D3774B297814E78FAA /* UpdateCommandBuilderTests.swift */; };
+		DD60A1F8888212E2E0181100 /* ShellCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */; };
+		F24D334AEA382E5D4A4C3415 /* UpdateCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F9C0A3375E1D33D8415D325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilderTests.swift; sourceTree = "<group>"; };
-		3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacUpdateButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57980B0787753049DB9B34BB /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
-		59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacUpdateButtonApp.swift; sourceTree = "<group>"; };
-		6C4BC2FD20627416EE0B865B /* MacUpdateButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUpdateButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEAADC645FD172D97FD74F6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommandRunner.swift; sourceTree = "<group>"; };
-		E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilder.swift; sourceTree = "<group>"; };
+		0486FA8577A414933ACD4519 /* UpdatePilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePilotApp.swift; sourceTree = "<group>"; };
+		21DCE3F4868A2687F7C685BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22CDD86550396965900925A9 /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
+		40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilder.swift; sourceTree = "<group>"; };
+		5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommandRunner.swift; sourceTree = "<group>"; };
+		86F1B8696BC6B4A119714CB8 /* UpdatePilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpdatePilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E745D3774B297814E78FAA /* UpdateCommandBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommandBuilderTests.swift; sourceTree = "<group>"; };
+		9C1823064699C91EF5DA8BF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0234F7257FB8F00DF17BBBF /* UpdatePilotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpdatePilotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		283E346754421A095EFBAADD /* Products */ = {
+		5BD2DD2E19723CBFC2E25041 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6C4BC2FD20627416EE0B865B /* MacUpdateButton.app */,
-				3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B911F9C833E9B284FA904B8B /* App */ = {
-			isa = PBXGroup;
-			children = (
-				2F9C0A3375E1D33D8415D325 /* Assets.xcassets */,
-				CEAADC645FD172D97FD74F6D /* ContentView.swift */,
-				59D31CF58909D892CAC60AFC /* MacUpdateButtonApp.swift */,
-				57980B0787753049DB9B34BB /* UpdaterViewModel.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		D1CE34D694A08D1E1ADB946C = {
-			isa = PBXGroup;
-			children = (
-				B911F9C833E9B284FA904B8B /* App */,
-				FC54C919AA1A84656E49A7F3 /* Core */,
-				E20046621F2D71D8098133D9 /* Tests */,
-				283E346754421A095EFBAADD /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		E20046621F2D71D8098133D9 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				3C370EAD8E33D9D09A024E0B /* UpdateCommandBuilderTests.swift */,
+				94E745D3774B297814E78FAA /* UpdateCommandBuilderTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		FC54C919AA1A84656E49A7F3 /* Core */ = {
+		860B0626846E42E37F586D3D = {
 			isa = PBXGroup;
 			children = (
-				E05FF3B64563DEC66A970451 /* ShellCommandRunner.swift */,
-				E521199B5FB5EB1CB3B4E1A1 /* UpdateCommandBuilder.swift */,
+				89FC9D0D3A3FA8CB160FA2CF /* App */,
+				C878301BB07DAB51C8E5CC7F /* Core */,
+				5BD2DD2E19723CBFC2E25041 /* Tests */,
+				C711EB65FB1081C408893D9F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89FC9D0D3A3FA8CB160FA2CF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				21DCE3F4868A2687F7C685BA /* Assets.xcassets */,
+				9C1823064699C91EF5DA8BF4 /* ContentView.swift */,
+				0486FA8577A414933ACD4519 /* UpdatePilotApp.swift */,
+				22CDD86550396965900925A9 /* UpdaterViewModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C711EB65FB1081C408893D9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86F1B8696BC6B4A119714CB8 /* UpdatePilot.app */,
+				D0234F7257FB8F00DF17BBBF /* UpdatePilotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C878301BB07DAB51C8E5CC7F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5DC95BEA1C9BE2E8499F31FD /* ShellCommandRunner.swift */,
+				40CC34052AF8F70BE38477C3 /* UpdateCommandBuilder.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -81,113 +81,113 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C521D153457B23E1E2C1377 /* MacUpdateButtonTests */ = {
+		2351CDE3262FD91EE49F59A7 /* UpdatePilotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7848CD00597F35D1D187A4E /* Build configuration list for PBXNativeTarget "MacUpdateButtonTests" */;
+			buildConfigurationList = 2A7BF8576B9EA89508816DED /* Build configuration list for PBXNativeTarget "UpdatePilotTests" */;
 			buildPhases = (
-				DC7C980F186FB2E769CD2E16 /* Sources */,
+				C17C14C74A71B54B899D642B /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MacUpdateButtonTests;
+			name = UpdatePilotTests;
 			packageProductDependencies = (
 			);
-			productName = MacUpdateButtonTests;
-			productReference = 3FD1A044D1A9CDE7A35E961D /* MacUpdateButtonTests.xctest */;
+			productName = UpdatePilotTests;
+			productReference = D0234F7257FB8F00DF17BBBF /* UpdatePilotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		881294DDD7BD1966A88512DE /* MacUpdateButton */ = {
+		F06CD10086874C5C310B0542 /* UpdatePilot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31BAD96F40CA881105358CAD /* Build configuration list for PBXNativeTarget "MacUpdateButton" */;
+			buildConfigurationList = 543F4F94EC1E3EAD969554ED /* Build configuration list for PBXNativeTarget "UpdatePilot" */;
 			buildPhases = (
-				62122B0A8E0E664B9B20CDDC /* Sources */,
-				636F9EF7C021E7D6DC941045 /* Resources */,
+				D6F7CB500006E0236CBE6659 /* Sources */,
+				F9645C32852BBFA592D4231B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MacUpdateButton;
+			name = UpdatePilot;
 			packageProductDependencies = (
 			);
-			productName = MacUpdateButton;
-			productReference = 6C4BC2FD20627416EE0B865B /* MacUpdateButton.app */;
+			productName = UpdatePilot;
+			productReference = 86F1B8696BC6B4A119714CB8 /* UpdatePilot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		889FBCAE4954ABCDE7E45136 /* Project object */ = {
+		13C8E524FE30C6296C97408D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					881294DDD7BD1966A88512DE = {
+					F06CD10086874C5C310B0542 = {
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 111A414C5084EC72A164BB65 /* Build configuration list for PBXProject "MacUpdateButton" */;
+			buildConfigurationList = 2C88D624371AF6B897C9B2DA /* Build configuration list for PBXProject "UpdatePilot" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 				en,
 			);
-			mainGroup = D1CE34D694A08D1E1ADB946C;
+			mainGroup = 860B0626846E42E37F586D3D;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 283E346754421A095EFBAADD /* Products */;
+			productRefGroup = C711EB65FB1081C408893D9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				881294DDD7BD1966A88512DE /* MacUpdateButton */,
-				2C521D153457B23E1E2C1377 /* MacUpdateButtonTests */,
+				F06CD10086874C5C310B0542 /* UpdatePilot */,
+				2351CDE3262FD91EE49F59A7 /* UpdatePilotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		636F9EF7C021E7D6DC941045 /* Resources */ = {
+		F9645C32852BBFA592D4231B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				552C162A96F8019B955F6BA8 /* Assets.xcassets in Resources */,
+				27051C86B353C1A93618BBAA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		62122B0A8E0E664B9B20CDDC /* Sources */ = {
+		C17C14C74A71B54B899D642B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9007783AC4B01C331C000E /* ContentView.swift in Sources */,
-				F6073A4B26A92B62E6FBEF01 /* MacUpdateButtonApp.swift in Sources */,
-				FEED5C4CD5C1804D2E1615FA /* ShellCommandRunner.swift in Sources */,
-				52465AB0688ADD8CD7F86398 /* UpdateCommandBuilder.swift in Sources */,
-				F8E3E6EB9CC3E794AF9A0DF1 /* UpdaterViewModel.swift in Sources */,
+				29047BDC07EBD26A81F4E58B /* ShellCommandRunner.swift in Sources */,
+				21F5AD0F969FB691F85EE4A3 /* UpdateCommandBuilder.swift in Sources */,
+				D796B227BB96F2C3ADEDBDE6 /* UpdateCommandBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC7C980F186FB2E769CD2E16 /* Sources */ = {
+		D6F7CB500006E0236CBE6659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE0304515E7B55F5FF544B3 /* ShellCommandRunner.swift in Sources */,
-				5CDBBC689A8BAC7F32354D37 /* UpdateCommandBuilder.swift in Sources */,
-				5EE8B03F589FDBA971759ED7 /* UpdateCommandBuilderTests.swift in Sources */,
+				BA87A02DC72E341D9C60CD96 /* ContentView.swift in Sources */,
+				DD60A1F8888212E2E0181100 /* ShellCommandRunner.swift in Sources */,
+				F24D334AEA382E5D4A4C3415 /* UpdateCommandBuilder.swift in Sources */,
+				85AF6454CB1F65218EA34A02 /* UpdatePilotApp.swift in Sources */,
+				0143E704D1EE9C7FA34F0C82 /* UpdaterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2AC2E3C2A52001C0288F74D4 /* Debug */ = {
+		668A58D3C7F6DB21EC64F133 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -207,7 +207,41 @@
 			};
 			name = Debug;
 		};
-		420694EEAD6524A24E9EA70E /* Debug */ = {
+		8317AE6B6244B2D282B3C610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.UpdatePilotTests;
+				SDKROOT = macosx;
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		A5DF14E6AD12106CA7EEA471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.UpdatePilotTests;
+				SDKROOT = macosx;
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+		B4AA1CA6103DEDFED5766060 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,41 +306,7 @@
 			};
 			name = Debug;
 		};
-		8525CC83A8B6B1B8A429A052 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButtonTests;
-				SDKROOT = macosx;
-				TEST_HOST = "";
-			};
-			name = Release;
-		};
-		859E5FF2CF4F6F352A177D43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cramleo.MacUpdateButtonTests;
-				SDKROOT = macosx;
-				TEST_HOST = "";
-			};
-			name = Debug;
-		};
-		A66E1BF0BE8A96F19D55B09A /* Release */ = {
+		CDE3EBAD9DC29A1B91FF8B2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -326,7 +326,7 @@
 			};
 			name = Release;
 		};
-		DA4D1AE008574F0AC3F2420C /* Release */ = {
+		D886FBE9048BC780BF55A848 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -387,34 +387,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		111A414C5084EC72A164BB65 /* Build configuration list for PBXProject "MacUpdateButton" */ = {
+		2A7BF8576B9EA89508816DED /* Build configuration list for PBXNativeTarget "UpdatePilotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				420694EEAD6524A24E9EA70E /* Debug */,
-				DA4D1AE008574F0AC3F2420C /* Release */,
+				8317AE6B6244B2D282B3C610 /* Debug */,
+				A5DF14E6AD12106CA7EEA471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		31BAD96F40CA881105358CAD /* Build configuration list for PBXNativeTarget "MacUpdateButton" */ = {
+		2C88D624371AF6B897C9B2DA /* Build configuration list for PBXProject "UpdatePilot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2AC2E3C2A52001C0288F74D4 /* Debug */,
-				A66E1BF0BE8A96F19D55B09A /* Release */,
+				B4AA1CA6103DEDFED5766060 /* Debug */,
+				D886FBE9048BC780BF55A848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C7848CD00597F35D1D187A4E /* Build configuration list for PBXNativeTarget "MacUpdateButtonTests" */ = {
+		543F4F94EC1E3EAD969554ED /* Build configuration list for PBXNativeTarget "UpdatePilot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				859E5FF2CF4F6F352A177D43 /* Debug */,
-				8525CC83A8B6B1B8A429A052 /* Release */,
+				668A58D3C7F6DB21EC64F133 /* Debug */,
+				CDE3EBAD9DC29A1B91FF8B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 889FBCAE4954ABCDE7E45136 /* Project object */;
+	rootObject = 13C8E524FE30C6296C97408D /* Project object */;
 }

@@ -3,8 +3,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VERSION="0.0.5"
-SCHEME="MacUpdateButton"
-PROJECT="MacUpdateButton.xcodeproj"
+SCHEME="UpdatePilot"
+PROJECT="UpdatePilot.xcodeproj"
 CONFIGURATION="Release"
 DERIVED_DATA="$ROOT/build/DerivedData"
 ARCHIVE_DIR="$ROOT/build/Products/$CONFIGURATION"

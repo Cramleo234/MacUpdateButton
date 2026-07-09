@@ -1,4 +1,4 @@
-# MacUpdateButton / UpdatePilot
+# UpdatePilot
 
 Dieses Repository enthält **UpdatePilot**, eine kleine native macOS-App, mit der wir gemeinsam eine einfache „Ein-Knopf“-Aktualisierung für deine Software bauen.
 
@@ -51,7 +51,7 @@ Build/Test:
 
 ```bash
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
-xcodebuild test -project MacUpdateButton.xcodeproj -scheme MacUpdateButton -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO
+xcodebuild test -project UpdatePilot.xcodeproj -scheme UpdatePilot -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO
 ```
 
 Release-App lokal bauen:

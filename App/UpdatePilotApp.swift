@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct MacUpdateButtonApp: App {
+struct UpdatePilotApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

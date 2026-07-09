@@ -1,4 +1,4 @@
-name: MacUpdateButton
+name: UpdatePilot
 options:
   bundleIdPrefix: com.cramleo
   deploymentTarget:
@@ -10,7 +10,7 @@ settings:
     SWIFT_VERSION: "5.9"
     MACOSX_DEPLOYMENT_TARGET: "14.0"
 targets:
-  MacUpdateButton:
+  UpdatePilot:
     type: application
     platform: macOS
     sources:
@@ -28,7 +28,7 @@ targets:
         ENABLE_HARDENED_RUNTIME: YES
         CODE_SIGN_STYLE: Automatic
         GENERATE_INFOPLIST_FILE: YES
-  MacUpdateButtonTests:
+  UpdatePilotTests:
     type: bundle.unit-test
     platform: macOS
     sources:
@@ -36,16 +36,16 @@ targets:
       - Core
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.cramleo.MacUpdateButtonTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.cramleo.UpdatePilotTests
         GENERATE_INFOPLIST_FILE: YES
         TEST_HOST: ""
         BUNDLE_LOADER: ""
 schemes:
-  MacUpdateButton:
+  UpdatePilot:
     build:
       targets:
-        MacUpdateButton: all
-        MacUpdateButtonTests: [test]
+        UpdatePilot: all
+        UpdatePilotTests: [test]
     test:
       targets:
-        - MacUpdateButtonTests
+        - UpdatePilotTests
