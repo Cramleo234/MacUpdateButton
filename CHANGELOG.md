@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+- Neues App-Icon für UpdatePilot ergänzt.
+
 ## 0.0.4
 
 - Update-Lauf startet wieder direkt in der App statt in einem separaten Terminalfenster.

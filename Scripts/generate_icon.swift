@@ -5,75 +5,147 @@ let projectRoot = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 let outputURL = projectRoot.appendingPathComponent("App/Assets.xcassets/AppIcon.appiconset")
 try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
 
+func color(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat = 1.0) -> NSColor {
+    NSColor(calibratedRed: red, green: green, blue: blue, alpha: alpha)
+}
+
+func point(_ x: CGFloat, _ y: CGFloat, _ size: CGFloat) -> NSPoint {
+    NSPoint(x: x * size, y: y * size)
+}
+
+func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat, _ size: CGFloat) -> NSRect {
+    NSRect(x: x * size, y: y * size, width: width * size, height: height * size)
+}
+
 func makeBaseIcon(size: CGFloat) -> NSImage {
     let image = NSImage(size: NSSize(width: size, height: size))
     image.lockFocus()
 
-    let rect = NSRect(x: 0, y: 0, width: size, height: size)
+    let canvas = NSRect(x: 0, y: 0, width: size, height: size)
     NSColor.clear.setFill()
-    rect.fill()
+    canvas.fill()
 
-    let inset = size * 0.03125
-    let cornerRadius = size * 0.215
-    let iconRect = rect.insetBy(dx: inset, dy: inset)
-    let shape = NSBezierPath(roundedRect: iconRect, xRadius: cornerRadius, yRadius: cornerRadius)
-    shape.addClip()
+    let inset = size * 0.032
+    let iconRect = canvas.insetBy(dx: inset, dy: inset)
+    let cornerRadius = size * 0.218
+    let iconShape = NSBezierPath(roundedRect: iconRect, xRadius: cornerRadius, yRadius: cornerRadius)
+    iconShape.addClip()
 
-    let gradient = NSGradient(colors: [
-        NSColor(calibratedRed: 0.06, green: 0.55, blue: 1.0, alpha: 1.0),
-        NSColor(calibratedRed: 0.03, green: 0.26, blue: 0.84, alpha: 1.0),
-        NSColor(calibratedRed: 0.10, green: 0.10, blue: 0.42, alpha: 1.0)
-    ])!
-    gradient.draw(in: iconRect, angle: -45)
+    NSGradient(colors: [
+        color(0.05, 0.88, 0.90),
+        color(0.05, 0.43, 0.96),
+        color(0.17, 0.08, 0.46)
+    ])!.draw(in: iconRect, angle: -42)
 
-    NSColor.white.withAlphaComponent(0.18).setFill()
-    NSBezierPath(ovalIn: NSRect(x: -size * 0.12, y: size * 0.44, width: size * 0.92, height: size * 0.70)).fill()
+    // Soft depth and glass, macOS-ish but not that old blue lump again.
+    NSGradient(colors: [
+        color(1.0, 1.0, 1.0, 0.22),
+        color(1.0, 1.0, 1.0, 0.02)
+    ])!.draw(in: NSBezierPath(ovalIn: rect(-0.18, 0.48, 1.02, 0.58, size)), angle: -18)
 
-    let shadow = NSShadow()
-    shadow.shadowColor = NSColor.black.withAlphaComponent(0.25)
-    shadow.shadowBlurRadius = size * 0.018
-    shadow.shadowOffset = NSSize(width: 0, height: -size * 0.018)
-    shadow.set()
+    NSGradient(colors: [
+        color(0.02, 0.05, 0.16, 0.00),
+        color(0.02, 0.05, 0.16, 0.34)
+    ])!.draw(in: rect(0.03, 0.03, 0.94, 0.52, size), angle: 90)
 
-    let ring = NSBezierPath()
-    ring.appendArc(withCenter: NSPoint(x: size * 0.5, y: size * 0.5), radius: size * 0.268, startAngle: 34, endAngle: 323, clockwise: false)
-    ring.lineWidth = size * 0.074
-    ring.lineCapStyle = .round
-    NSColor.white.withAlphaComponent(0.96).setStroke()
-    ring.stroke()
+    // Outer instrument ring: UpdatePilot as a small cockpit/update dial.
+    let dialCenter = point(0.50, 0.49, size)
+    let outerDial = NSRect(x: dialCenter.x - size * 0.335, y: dialCenter.y - size * 0.335, width: size * 0.67, height: size * 0.67)
 
+    let dialShadow = NSShadow()
+    dialShadow.shadowColor = color(0.00, 0.02, 0.10, 0.35)
+    dialShadow.shadowBlurRadius = size * 0.028
+    dialShadow.shadowOffset = NSSize(width: 0, height: -size * 0.018)
+    dialShadow.set()
+
+    color(0.02, 0.07, 0.22, 0.25).setFill()
+    NSBezierPath(ovalIn: outerDial).fill()
     NSShadow().set()
 
-    // Arrow head for circular update ring.
-    let arrow = NSBezierPath()
-    arrow.move(to: NSPoint(x: size * 0.748, y: size * 0.758))
-    arrow.line(to: NSPoint(x: size * 0.887, y: size * 0.719))
-    arrow.line(to: NSPoint(x: size * 0.787, y: size * 0.622))
-    arrow.close()
-    NSColor.white.withAlphaComponent(0.96).setFill()
-    arrow.fill()
+    NSGradient(colors: [
+        color(0.92, 1.0, 1.0, 0.96),
+        color(0.62, 0.95, 1.0, 0.90),
+        color(0.18, 0.42, 0.96, 0.52)
+    ])!.draw(in: NSBezierPath(ovalIn: outerDial), angle: -35)
 
-    // Download arrow inside.
-    let accent = NSColor(calibratedRed: 0.02, green: 0.20, blue: 0.54, alpha: 1.0)
-    accent.setFill()
-    NSBezierPath(roundedRect: NSRect(x: size * 0.463, y: size * 0.420, width: size * 0.074, height: size * 0.260), xRadius: size * 0.037, yRadius: size * 0.037).fill()
+    color(0.03, 0.10, 0.30, 0.82).setFill()
+    NSBezierPath(ovalIn: outerDial.insetBy(dx: size * 0.045, dy: size * 0.045)).fill()
 
-    let down = NSBezierPath()
-    down.move(to: NSPoint(x: size * 0.5, y: size * 0.315))
-    down.line(to: NSPoint(x: size * 0.348, y: size * 0.488))
-    down.line(to: NSPoint(x: size * 0.455, y: size * 0.488))
-    down.line(to: NSPoint(x: size * 0.455, y: size * 0.438))
-    down.line(to: NSPoint(x: size * 0.545, y: size * 0.438))
-    down.line(to: NSPoint(x: size * 0.545, y: size * 0.488))
-    down.line(to: NSPoint(x: size * 0.652, y: size * 0.488))
-    down.close()
-    down.fill()
+    NSGradient(colors: [
+        color(0.09, 0.72, 0.96, 0.72),
+        color(0.08, 0.18, 0.58, 0.95)
+    ])!.draw(in: NSBezierPath(ovalIn: outerDial.insetBy(dx: size * 0.083, dy: size * 0.083)), angle: -42)
 
-    NSBezierPath(roundedRect: NSRect(x: size * 0.334, y: size * 0.237, width: size * 0.332, height: size * 0.066), xRadius: size * 0.033, yRadius: size * 0.033).fill()
+    // Update arc, deliberately broken so it reads as motion at small sizes.
+    let arc = NSBezierPath()
+    arc.appendArc(withCenter: dialCenter, radius: size * 0.276, startAngle: 213, endAngle: 505, clockwise: false)
+    arc.lineWidth = size * 0.050
+    arc.lineCapStyle = .round
+    color(0.93, 1.0, 1.0, 0.96).setStroke()
+    arc.stroke()
+
+    let arcHead = NSBezierPath()
+    arcHead.move(to: point(0.815, 0.548, size))
+    arcHead.line(to: point(0.885, 0.636, size))
+    arcHead.line(to: point(0.777, 0.652, size))
+    arcHead.close()
+    color(0.93, 1.0, 1.0, 0.98).setFill()
+    arcHead.fill()
+
+    // Tiny tick marks like a cockpit gauge. They disappear gracefully at 16px.
+    color(0.85, 1.0, 1.0, 0.45).setStroke()
+    for tick in stride(from: 210.0, through: 330.0, by: 30.0) {
+        let radians = CGFloat(tick) * .pi / 180
+        let inner = size * 0.210
+        let outer = size * 0.242
+        let start = NSPoint(x: dialCenter.x + cos(radians) * inner, y: dialCenter.y + sin(radians) * inner)
+        let end = NSPoint(x: dialCenter.x + cos(radians) * outer, y: dialCenter.y + sin(radians) * outer)
+        let mark = NSBezierPath()
+        mark.move(to: start)
+        mark.line(to: end)
+        mark.lineWidth = size * 0.010
+        mark.lineCapStyle = .round
+        mark.stroke()
+    }
+
+    // Pilot/navigation mark: an upward paper-plane arrow. Better silhouette than the old download blob.
+    let planeShadow = NSShadow()
+    planeShadow.shadowColor = color(0.00, 0.02, 0.10, 0.36)
+    planeShadow.shadowBlurRadius = size * 0.026
+    planeShadow.shadowOffset = NSSize(width: 0, height: -size * 0.016)
+    planeShadow.set()
+
+    let plane = NSBezierPath()
+    plane.move(to: point(0.500, 0.735, size))
+    plane.line(to: point(0.665, 0.325, size))
+    plane.curve(to: point(0.520, 0.405, size), controlPoint1: point(0.615, 0.366, size), controlPoint2: point(0.565, 0.392, size))
+    plane.line(to: point(0.500, 0.268, size))
+    plane.line(to: point(0.480, 0.405, size))
+    plane.curve(to: point(0.335, 0.325, size), controlPoint1: point(0.435, 0.392, size), controlPoint2: point(0.385, 0.366, size))
+    plane.close()
+
+    NSGradient(colors: [
+        color(1.0, 1.0, 1.0, 1.0),
+        color(0.70, 0.96, 1.0, 0.96),
+        color(0.17, 0.82, 0.96, 0.94)
+    ])!.draw(in: plane, angle: -90)
+    NSShadow().set()
+
+    color(1.0, 1.0, 1.0, 0.30).setFill()
+    let planeHighlight = NSBezierPath()
+    planeHighlight.move(to: point(0.500, 0.666, size))
+    planeHighlight.line(to: point(0.565, 0.445, size))
+    planeHighlight.curve(to: point(0.505, 0.476, size), controlPoint1: point(0.546, 0.462, size), controlPoint2: point(0.524, 0.473, size))
+    planeHighlight.close()
+    planeHighlight.fill()
+
+    // Subtle lower base to keep the icon grounded in the Dock.
+    color(0.01, 0.08, 0.26, 0.34).setFill()
+    NSBezierPath(roundedRect: rect(0.318, 0.194, 0.364, 0.045, size), xRadius: size * 0.022, yRadius: size * 0.022).fill()
 
     let border = NSBezierPath(roundedRect: iconRect, xRadius: cornerRadius, yRadius: cornerRadius)
     border.lineWidth = size * 0.008
-    NSColor.white.withAlphaComponent(0.34).setStroke()
+    color(1.0, 1.0, 1.0, 0.32).setStroke()
     border.stroke()
 
     image.unlockFocus()
@@ -124,8 +196,7 @@ let sizes: [(String, Int)] = [
     ("icon_256x256.png", 256),
     ("icon_256x256@2x.png", 512),
     ("icon_512x512.png", 512),
-    ("icon_512x512@2x.png", 1024),
-    ("icon_preview_1024.png", 1024)
+    ("icon_512x512@2x.png", 1024)
 ]
 
 for (filename, size) in sizes {

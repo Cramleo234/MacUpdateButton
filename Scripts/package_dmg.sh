@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="0.0.4"
+VERSION="0.0.5"
 SCHEME="MacUpdateButton"
 PROJECT="MacUpdateButton.xcodeproj"
 CONFIGURATION="Release"

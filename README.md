@@ -4,10 +4,10 @@ Dieses Repository enthält **UpdatePilot**, eine kleine native macOS-App, mit de
 
 ## Ziel
 
-Version `0.0.4` enthält:
+Version `0.0.5` enthält:
 
 - nativer macOS-Name **UpdatePilot**
-- eigenes App-Icon
+- neues App-Icon
 - ein großer Button: **Updates starten**
 - sichere Auswahl, was aktualisiert/geprüft werden soll:
   - Homebrew
@@ -63,11 +63,11 @@ Release-App lokal bauen:
 Das erzeugt:
 
 - `dist/UpdatePilot.app`
-- `dist/UpdatePilot-0.0.4.dmg`
+- `dist/UpdatePilot-0.0.5.dmg`
 
 ## Version
 
-Aktuelle Version: `0.0.4`
+Aktuelle Version: `0.0.5`
 
 ## Lizenz
 

@@ -38,7 +38,7 @@ public enum UpdateCommandBuilder {
     public static func updateCommand(selection: UpdateSelection = UpdateSelection()) -> String {
         var commands = [
             "set -o pipefail",
-            "echo '== UpdatePilot 0.0.4 =='"
+            "echo '== UpdatePilot 0.0.5 =='"
         ]
 
         if selection.includeHomebrew {
@@ -93,7 +93,7 @@ fi
         """
 echo '== macOS-Systemupdates: verfügbare Updates =='
 softwareupdate -l || true
-echo 'Hinweis: macOS-Systemupdates werden in Version 0.0.4 nur angezeigt, nicht automatisch installiert.'
+echo 'Hinweis: macOS-Systemupdates werden in Version 0.0.5 nur angezeigt, nicht automatisch installiert.'
 """
     }
 }
