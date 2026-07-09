@@ -20,6 +20,19 @@ Version `0.0.2` enthält:
 
 `softwareupdate -i -a` kann Admin-Rechte, Neustarts und längere Sperren benötigen. Deshalb zeigt UpdatePilot macOS-Systemupdates aktuell nur an. Automatische Systemupdate-Installation bauen wir erst ein, wenn wir gemeinsam festlegen, wie Bestätigung, Neustart und Admin-Rechte sicher funktionieren sollen.
 
+## Installation über Homebrew
+
+```bash
+brew tap Cramleo234/tap
+brew install --cask updatepilot
+```
+
+Alternativ direkt:
+
+```bash
+brew install --cask Cramleo234/tap/updatepilot
+```
+
 ## Entwicklung
 
 Voraussetzungen:
