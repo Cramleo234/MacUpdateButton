@@ -38,7 +38,7 @@ public enum UpdateCommandBuilder {
     public static func updateCommand(selection: UpdateSelection = UpdateSelection()) -> String {
         var commands = [
             "set -o pipefail",
-            "echo '== UpdatePilot 0.0.6 =='"
+            "echo '== UpdatePilot 0.1.0 =='"
         ]
 
         if selection.includeHomebrew {

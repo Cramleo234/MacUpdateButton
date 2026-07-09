@@ -93,7 +93,7 @@ struct ContentView: View {
     }
 
     private var statusHero: some View {
-        glassCard(padding: 24) {
+        surfaceCard(padding: 24) {
             HStack(spacing: 22) {
                 ZStack {
                     Circle()
@@ -138,7 +138,7 @@ struct ContentView: View {
     }
 
     private var updatePlanCard: some View {
-        glassCard {
+        surfaceCard {
             VStack(alignment: .leading, spacing: 16) {
                 sectionHeader("Update-Plan", systemImage: "list.bullet.clipboard")
 
@@ -182,7 +182,7 @@ struct ContentView: View {
     }
 
     private var selectionCard: some View {
-        glassCard {
+        surfaceCard {
             VStack(alignment: .leading, spacing: 16) {
                 sectionHeader("Bereiche", systemImage: "slider.horizontal.3")
 
@@ -216,7 +216,7 @@ struct ContentView: View {
     }
 
     private var timelineCard: some View {
-        glassCard {
+        surfaceCard {
             VStack(alignment: .leading, spacing: 16) {
                 sectionHeader("Ablauf", systemImage: "point.topleft.down.curvedto.point.bottomright.up")
 
@@ -235,7 +235,7 @@ struct ContentView: View {
     @ViewBuilder
     private var errorCard: some View {
         if let error = viewModel.friendlyError {
-            glassCard {
+            surfaceCard {
                 VStack(alignment: .leading, spacing: 12) {
                     Label(error.title, systemImage: "exclamationmark.triangle.fill")
                         .font(.headline)
@@ -255,7 +255,7 @@ struct ContentView: View {
     }
 
     private var logDisclosure: some View {
-        glassCard {
+        surfaceCard {
             VStack(alignment: .leading, spacing: 14) {
                 Button {
                     showsLog.toggle()
@@ -452,7 +452,7 @@ struct ContentView: View {
         .disabled(viewModel.isRunning)
     }
 
-    private func glassCard<Content: View>(padding: CGFloat = 20, @ViewBuilder content: () -> Content) -> some View {
+    private func surfaceCard<Content: View>(padding: CGFloat = 20, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             content()
         }

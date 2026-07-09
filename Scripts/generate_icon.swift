@@ -37,7 +37,7 @@ func makeBaseIcon(size: CGFloat) -> NSImage {
         color(0.17, 0.08, 0.46)
     ])!.draw(in: iconRect, angle: -42)
 
-    // Soft depth and glass, macOS-ish but not that old blue lump again.
+    // Soft depth, macOS-ish but not that old blue lump again.
     NSGradient(colors: [
         color(1.0, 1.0, 1.0, 0.22),
         color(1.0, 1.0, 1.0, 0.02)

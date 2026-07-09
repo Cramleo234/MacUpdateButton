@@ -4,7 +4,7 @@ final class UpdateCommandBuilderTests: XCTestCase {
     func testUpdateCommandContainsSafeVersionAndDefaultTools() {
         let command = UpdateCommandBuilder.updateCommand()
 
-        XCTAssertTrue(command.contains("UpdatePilot 0.0.6"))
+        XCTAssertTrue(command.contains("UpdatePilot 0.1.0"))
         XCTAssertTrue(command.contains("brew update"))
         XCTAssertTrue(command.contains("brew upgrade"))
         XCTAssertTrue(command.contains("mas upgrade"))

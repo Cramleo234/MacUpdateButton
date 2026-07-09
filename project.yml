@@ -5,8 +5,8 @@ options:
     macOS: "14.0"
 settings:
   base:
-    MARKETING_VERSION: "0.0.6"
-    CURRENT_PROJECT_VERSION: "6"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "10"
     SWIFT_VERSION: "5.9"
     MACOSX_DEPLOYMENT_TARGET: "14.0"
 targets:
