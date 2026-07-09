@@ -33,7 +33,7 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("UpdatePilot")
                     .font(.system(size: 34, weight: .bold, design: .rounded))
-                Text("Version 0.0.2 · Ein sicherer Knopf für deine macOS-Softwareupdates")
+                Text("Version 0.0.3 · Ein sicherer Knopf für deine macOS-Softwareupdates")
                     .font(.headline)
                     .foregroundStyle(.secondary)
             }
@@ -98,7 +98,7 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Homebrew")
                         .font(.body.weight(.medium))
-                    Text("brew update, brew upgrade und brew cleanup")
+                    Text("brew update, brew upgrade und brew cleanup im Terminal")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -109,7 +109,7 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Mac App Store")
                         .font(.body.weight(.medium))
-                    Text("mas upgrade, falls mas installiert ist")
+                    Text("mas upgrade im Terminal, falls mas installiert ist")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

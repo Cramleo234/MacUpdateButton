@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.3
+
+- Update-Lauf öffnet jetzt ein Terminalfenster, damit Passwortabfragen beantwortet werden können.
+- Hinweise in der App angepasst, weil Homebrew- und mas-Updates nun interaktiv laufen.
+
 ## 0.0.2
 
 - App-Anzeigename auf **UpdatePilot** geändert.
