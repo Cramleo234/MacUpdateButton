@@ -32,7 +32,7 @@ struct ContentView: View {
                 footer
             }
         }
-        .frame(minWidth: 760, minHeight: 720)
+        .frame(minWidth: 760, minHeight: 520)
         .animation(.snappy(duration: 0.32), value: viewModel.phase)
         .animation(.snappy(duration: 0.32), value: showsLog)
     }
