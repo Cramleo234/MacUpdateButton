@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Standardfenster kompakter eingestellt, damit UpdatePilot auf kleineren Bildschirmen vollständig bedienbar bleibt.
+- Den Dashboard-Inhalt bei kleinerer Fensterhöhe weiterhin scrollbar gehalten.
+
 ## 0.1.0
 
 - Hauptfenster als neues Dashboard mit Statusbereich, Update-Plan und Ablaufanzeige aufgebaut.

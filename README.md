@@ -4,7 +4,7 @@ Dieses Repository enthält **UpdatePilot**, eine kleine native macOS-App, mit de
 
 ## Ziel
 
-Version `0.1.0` enthält:
+Version `0.1.1` enthält:
 
 - nativer macOS-Name **UpdatePilot**
 - neues App-Icon
@@ -16,6 +16,7 @@ Version `0.1.0` enthält:
   - Mac App Store via `mas`, falls installiert
   - macOS-Systemupdates nur anzeigen
 - schrittweiser Update-Lauf in der App, ohne separates Terminalfenster
+- kompaktere Standardfenstergröße mit scrollbar bleibendem Dashboard
 - baubare `.app` und `.dmg`
 
 ## Sicherheitsentscheidung
@@ -65,11 +66,11 @@ Release-App lokal bauen:
 Das erzeugt:
 
 - `dist/UpdatePilot.app`
-- `dist/UpdatePilot-0.1.0.dmg`
+- `dist/UpdatePilot-0.1.1.dmg`
 
 ## Version
 
-Aktuelle Version: `0.1.0`
+Aktuelle Version: `0.1.1`
 
 ## Lizenz
 
